@@ -1,0 +1,31 @@
+<div class="container">
+	<h1 id="my-info-title">My Info</h1>
+	<div>
+		<div class="my-info-item">
+			<span class="my-info-label" ng-if="myInfoCtrl.userInfo.fname">First Name: </span>
+			<span class="my-info-content">{{ myInfoCtrl.userInfo.fname }}</span>
+		</div>
+		<div class="my-info-item">
+			<span class="my-info-label" ng-if="myInfoCtrl.userInfo.lname">Last Name: </span>
+			<span class="my-info-content">{{ myInfoCtrl.userInfo.lname }}</span>
+		</div>
+		<div class="my-info-item">
+			<span class="my-info-label" ng-if="myInfoCtrl.userInfo.email">Email: </span>
+			<span class="my-info-content">{{ myInfoCtrl.userInfo.email }}</span>
+		</div>
+		<div class="my-info-item">
+			<span class="my-info-label" ng-if="myInfoCtrl.userInfo.phone">Phone Number: </span>
+			<span class="my-info-content">{{ myInfoCtrl.userInfo.phone }}</span>
+		</div>
+		<div class="my-info-item">
+			<span class="my-info-label" ng-if="myInfoCtrl.userInfo.favdish">Favorite Menu Item: </span>
+			<span class="my-info-content">{{ myInfoCtrl.userInfo.favdish.name }}</span>
+		</div>
+		<div class="" ng-if="myInfoCtrl.userInfo.favdish">
+      <img class="fav-dish-img" width="250" height="150" ng-src="{{myInfoCtrl.ApiPath}}/images/{{myInfoCtrl.userInfo.favdish.short_name}}.jpg" alt="{{myInfoCtrl.userInfo.favdish.short_name}}">
+    </div>
+    <span class="fav-dish-descr" ng-if="myInfoCtrl.userInfo.favdish">{{ myInfoCtrl.userInfo.favdish.description }}</span>
+		<div class="my-info-default" ng-if="!myInfoCtrl.userInfo.fname">
+			Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a>
+		</div>
+	</div>
